@@ -1,5 +1,5 @@
 // Hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // Styles
 import './App.css'
 // Components
@@ -11,6 +11,16 @@ import data from './data';
 
 function App() {
   const [listElements, setListElements] = useState(data);
+
+  const handleDelete = (id)=> {
+    let newElements = listElements.filter((task) => task.id == id)
+    setListElements(newElements);
+  };
+
+  /* useEffect(() => {
+
+  }, [listElements]); */
+
 
   return (
     <div>

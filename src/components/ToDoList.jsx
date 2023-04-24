@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./Card";
 
-// terminar boton de delete
 const ToDoList = ({ list }) => {
 
     return (
@@ -9,7 +8,7 @@ const ToDoList = ({ list }) => {
             {list.map((item, index) => {
                 return (
                     <div>
-                        <Card key={index} item={item} /> <button key={index}>x</button>
+                        <Card key={index} item={item} />
                     </div>
                 )
             })}
