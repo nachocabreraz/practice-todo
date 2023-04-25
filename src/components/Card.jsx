@@ -1,11 +1,15 @@
 import React from "react";
 
-const Card = ({ item }) => {
+const Card = ({ item, toggleHandler }) => {
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        toggleHandler(e.currentTarget.id)
+    };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-evenly', alignItems: 'center', flexWrap: 'wrap', margin: '1rem'}}>
+        <div id={item.id} key={item.id + item.task} name="item" value={item.id} onClick={handleClick} className={item.complete ? 'strike' : ''}>
             {item.task}
-            <button onClick={(e)=> console.log(e.currentTarget.id)} >x</button>
         </div>
     )
 };
